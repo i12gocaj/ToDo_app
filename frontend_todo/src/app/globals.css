@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definición de Variables CSS */
+@layer base {
+  /* Modo Claro */
+  :root {
+    --background: 0 0% 100%; /* HSL para fondo claro */
+    --foreground: 224 71.4% 4.1%; /* HSL para texto claro */
+    --card: 0 0% 100%; /* HSL para tarjetas en modo claro */
+    --card-foreground: 224 71.4% 4.1%; /* HSL para texto en tarjetas claras */
+    --popover: 0 0% 100%; /* HSL para popovers en modo claro */
+    --popover-foreground: 224 71.4% 4.1%; /* HSL para texto en popovers claros */
+    --primary: 220.9 39.3% 11%; /* HSL para color primario claro */
+    --primary-foreground: 210 20% 98%; /* HSL para texto en color primario claro */
+    --secondary: 220 14.3% 95.9%; /* HSL para color secundario claro */
+    --secondary-foreground: 220.9 39.3% 11%; /* HSL para texto en color secundario claro */
+    --muted: 220 14.3% 95.9%; /* HSL para colores atenuados claros */
+    --muted-foreground: 220 8.9% 46.1%; /* HSL para texto atenuado claro */
+    --accent: 220 14.3% 95.9%; /* HSL para color de acento claro */
+    --accent-foreground: 220.9 39.3% 11%; /* HSL para texto en color de acento claro */
+    --destructive: 0 84.2% 60.2%; /* HSL para colores destructivos claros */
+    --destructive-foreground: 210 20% 98%; /* HSL para texto en colores destructivos claros */
+    --border: 220 13% 91%; /* HSL para bordes en modo claro */
+    --input: 220 13% 91%; /* HSL para inputs en modo claro */
+    --ring: 224 71.4% 4.1%; /* HSL para anillos de enfoque en modo claro */
+    --radius: 0.5rem; /* Radio de borde */
+    --chart-1: 12 76% 61%; /* HSL para gráficos */
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  /* Modo Oscuro */
+  .dark {
+    --background: 224 71.4% 4.1%; /* HSL para fondo oscuro */
+    --foreground: 210 20% 98%; /* HSL para texto oscuro */
+    --card: 224 71.4% 4.1%; /* HSL para tarjetas en modo oscuro */
+    --card-foreground: 210 20% 98%; /* HSL para texto en tarjetas oscuras */
+    --popover: 224 71.4% 4.1%; /* HSL para popovers en modo oscuro */
+    --popover-foreground: 210 20% 98%; /* HSL para texto en popovers oscuros */
+    --primary: 210 20% 98%; /* HSL para color primario oscuro */
+    --primary-foreground: 220.9 39.3% 11%; /* HSL para texto en color primario oscuro */
+    --secondary: 215 27.9% 16.9%; /* HSL para color secundario oscuro */
+    --secondary-foreground: 210 20% 98%; /* HSL para texto en color secundario oscuro */
+    --muted: 215 27.9% 16.9%; /* HSL para colores atenuados oscuros */
+    --muted-foreground: 217.9 10.6% 64.9%; /* HSL para texto atenuado oscuro */
+    --accent: 215 27.9% 16.9%; /* HSL para color de acento oscuro */
+    --accent-foreground: 210 20% 98%; /* HSL para texto en color de acento oscuro */
+    --destructive: 0 62.8% 30.6%; /* HSL para colores destructivos oscuros */
+    --destructive-foreground: 210 20% 98%; /* HSL para texto en colores destructivos oscuros */
+    --border: 215 27.9% 16.9%; /* HSL para bordes en modo oscuro */
+    --input: 215 27.9% 16.9%; /* HSL para inputs en modo oscuro */
+    --ring: 216 12.2% 83.9%; /* HSL para anillos de enfoque en modo oscuro */
+    --chart-1: 220 70% 50%; /* HSL para gráficos en modo oscuro */
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+/* Aplicación de Estilos Generales */
+@layer base {
+  /* Bordes de todos los elementos */
+  * {
+    @apply border-[hsl(var(--border))];
+  }
+
+  /* Fondo y color de texto del cuerpo */
+  body {
+    @apply bg-[hsl(var(--background))] text-[hsl(var(--foreground))] transition-colors duration-300;
+  }
+
+  /* Transiciones suaves para todos los elementos */
+  *,
+  *::before,
+  *::after {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+}
